@@ -12,6 +12,9 @@ app.use(cors());
 
 const submissionsRouter = require('./routes/submissions');
 app.use('/api/submissions', submissionsRouter);
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+})
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);

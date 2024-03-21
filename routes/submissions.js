@@ -2,7 +2,6 @@ const express = require('express');
 const { body, validationResult } = require('express-validator');
 const router = express.Router();
 const db = require('../configs/db');
-const setupRedisClient = require('../configs/cache');
 const redisClient = require('../configs/cache');
 
 // Post a new submission
