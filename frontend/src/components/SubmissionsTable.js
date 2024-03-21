@@ -12,7 +12,7 @@ const SubmissionsTable = () => {
   useEffect(() => {
     const fetchSubmissions = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/submissions');
+        const response = await fetch('https://code-submission-and-execution.onrender.com/api/submissions');
         console.log(response);
         if (!response.ok) throw new Error('Network response was not ok.');
 

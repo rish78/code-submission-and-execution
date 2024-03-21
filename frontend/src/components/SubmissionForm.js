@@ -42,7 +42,7 @@ const SubmissionForm = () => {
         const resultData = await resultResponse.json();
         
         if (resultData.status_id > 2 || attempt >= maxAttempts) { // Assuming status_id > 2 indicates completion
-            console.log("Exceeded max attempts: ", resultData)
+            if(attempt >= maxAttempts)  console.log("Exceeded max attempts: ", resultData)
             return resultData;
           } else {
             // Wait for a bit before trying again
@@ -97,7 +97,7 @@ const SubmissionForm = () => {
         console.log("Result obtained from judge0: ", resultData)
         
 
-      const response = await fetch('http://localhost:3000/api/submissions', {
+      const response = await fetch('https://code-submission-and-execution.onrender.com/api/submissions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
